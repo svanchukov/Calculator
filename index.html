@@ -4,50 +4,68 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Calculator</title>
-  <link rel="stylesheet" href="style.css"></link>
+  <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="index.js" defer></script>
 </head>
 <body>
-  <div class="header-container">
-      <h1 class="title-calculate">This is your the best and perfect Calculator</h1>
-      <hr class="header-line"/>
-    </div>
-  <div class="calculator-wrapper">
-    <main class="calculator-main">
-      <div class="div-buttons">
-          <p class="under-buttons">Здесь ты можешь проводить свои расчёты</p>
-          <input class="inputNumber" type="text" id="display" placeholder="Введите любое число: " maxlength="36"/>
-          <input class="output" type="text" id="display" readonly placeholder="Ваш ответ: " maxlength="72"/>
-          <div class="buttons">
-            
-            <button class="number-button" type="button">7</button>
-            <button class="number-button" type="button">8</button>
-            <button class="number-button" type="button">9</button>
-            <button class="operator-button" type="button">/</button>
 
-            <button class="number-button" type="button">4</button>
-            <button class="number-button" type="button">5</button>
-            <button class="number-button" type="button">6</button>
-            <button class="operator-button" type="button">*</button>
+  <header class="header">
+    <h1 class="header__title">This is your the best and perfect Calculator</h1>
+    <hr class="header__line" />
+  </header>
 
-            <button class="number-button" type="button">1</button>
-            <button class="number-button" type="button">2</button>
-            <button class="number-button" type="button">3</button>
-            <button class="operator-button" type="button">-</button>
+  <div class="calculator">
+    <main class="calculator__main">
 
-            <button class="number-button" type="button">0</button>
-            <button class="number-button" type="button">.</button>
-            <button id="clear" type="button">C</button>
-            <button class="operator-button" type="button">+</button>
+      <!-- Левая часть: Панель калькулятора -->
+      <div class="calculator__panel">
+        <p class="calculator__description">Здесь ты можешь проводить свои расчёты</p>
+        <input class="calculator__input" type="text" id="display" placeholder="Введите любое число:" maxlength="36" />
+        <input class="calculator__output" type="text" id="result" readonly placeholder="Ваш ответ:" maxlength="72" />
 
-            <button class="operator-button" type="button">%</button>
-            <button class="operator-button" type="button">(</button>
-            <button class="operator-button" type="button">)</button>
-            <button id="equals" type="button">=</button>
-          </div>
+        <div class="calculator__buttons">
+          <button class="calculator__button calculator__button--number" type="button">7</button>
+          <button class="calculator__button calculator__button--number" type="button">8</button>
+          <button class="calculator__button calculator__button--number" type="button">9</button>
+          <button class="calculator__button calculator__button--operator" type="button">/</button>
+
+          <button class="calculator__button calculator__button--number" type="button">4</button>
+          <button class="calculator__button calculator__button--number" type="button">5</button>
+          <button class="calculator__button calculator__button--number" type="button">6</button>
+          <button class="calculator__button calculator__button--operator" type="button">*</button>
+
+          <button class="calculator__button calculator__button--number" type="button">1</button>
+          <button class="calculator__button calculator__button--number" type="button">2</button>
+          <button class="calculator__button calculator__button--number" type="button">3</button>
+          <button class="calculator__button calculator__button--operator" type="button">-</button>
+
+          <button class="calculator__button calculator__button--number" type="button">0</button>
+          <button class="calculator__button calculator__button--number" type="button">.</button>
+          <button class="calculator__button calculator__button--clear" id="clear" type="button">C</button>
+          <button class="calculator__button calculator__button--operator" type="button">+</button>
+
+          <button class="calculator__button calculator__button--operator" id="square" type="button">square</button>
+          <button class="calculator__button calculator__button--operator" id="per-Cent" type="button">%</button>
+          <button class="calculator__button calculator__button--operator" type="button">(</button>
+          <button class="calculator__button calculator__button--operator" type="button">)</button>
+
+          <button class="calculator__button calculator__button--equal" id="equals" type="button">=</button>
+        </div>
       </div>
+
+      <!-- Правая часть: История -->
+      <aside class="history">
+        <div class="history__container">
+          <h3 class="history__title">История рассчётов:</h3>
+          <hr class="history__line" />
+          <ol class="history__list" id="history-list"></ol>
+        </div>
+      </aside>
+
     </main>
   </div>
-  <script src="index.js"></script>
+
+  
 </body>
 </html>
